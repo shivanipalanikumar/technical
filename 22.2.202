@@ -1,0 +1,43 @@
+import re                                                
+n=input()                                                    
+s=input()
+alp=re.findall("[a-z]+",n)
+num=re.findall("[a-z]+",s)
+print(alp)
+print(num)
+
+input(2)output(2)
+["th","i","a","pe"]
+["e".none,"s"."e"]
+['th', 'i', 'a', 'pe']
+['e', 'none', 's', 'e']
+
+
+
+
+Given two strings s1 and s2. The task is to find a string 's2' can be obtained by rotating another string 's1'.
+Sample Input 0
+relearnpro
+prorelearn
+Sample Output 0
+1
+
+program
+n=input()
+s=input()
+c=0
+for i in range (len(n)):
+    if s==n:
+        print("1")
+        break
+    else:
+        c+=1
+        n=n[1:]+n[0]
+if c==len(n):
+    print("0")
+   
+   
+   
+   
+   
+        
