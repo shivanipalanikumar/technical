@@ -37,7 +37,26 @@ if c==len(n):
     print("0")
    
    
-   
-   
-   
+  
+  STAIRCASE:
+n=int(input())
+j=0
+for i in range(2**n):
+    s=bin(i)[2:]
+    z=s.zfill(n)
+    if "00" not in z and z[-1]=='1':
+        for j in range(n):
+            if z[j]=='1':
+                print(j+1,end="")
+        print()
+  INPUT(1)
+4
+24
+234
+134
+124
+1234
+
+
+
         
