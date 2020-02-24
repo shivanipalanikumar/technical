@@ -1,0 +1,22 @@
+n=input()
+l=[]
+s=[]
+ind=[]
+for i in range(len(n)):
+    if n[i].isalpha():
+        l.append(n[i])
+    else:
+        s.append(n[i])
+        ind.append(n.index(n[i]))
+l=l[::-1]
+j=0
+x=len(l)+len(s)
+for i in range (x):
+    if i in ind:
+        l.insert(ind[j],s[j])
+        j+=1
+    print(l[i],end="")
+
+input(1)
+he@ll$o
+ol@le$h
