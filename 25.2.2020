@@ -1,0 +1,73 @@
+Hotel hunter
+
+c
+
+INPUT(2)
+3 5
+3 7 9
+021
+
+
+lcs
+
+x,y=input().split(' ')
+n,m=len(x),len(y)
+l=[[0 for _ in range(m+1)]for _ in range(n+1)]
+for i in range(1,n+1):
+    for j in range(1,m+1):
+        if (x[i-1]==y[j-1]):
+            l[i][j]=l[i-1][j-1]+1
+        else:
+            l[i][j]=max(l[i-1][j],l[i][j-1])
+print(l[n][m])
+for i in l:
+    print(i)
+print(l[n][m])
+
+input(1)
+5
+[0, 0, 0, 0, 0, 0, 0]
+[0, 1, 1, 1, 1, 1, 1]
+[0, 1, 1, 2, 2, 2, 2]
+[0, 1, 1, 2, 3, 3, 3]
+[0, 1, 1, 2, 3, 4, 4]
+[0, 1, 1, 2, 3, 4, 5]
+
+Hotel Hunter
+n,cap=map(int,input().split(" "))
+l=list(map(int,input().split(" ")))
+lit=0
+m=""
+for i in l:
+    lit=lit+i
+    k=lit//cap
+    lit=lit-(k*cap)
+    k=k%10
+    m=m+str(k)
+print(m)
+
+INPUT(2)
+3 5
+71 82 84
+467
+
+
+b,c=map(int,input().split(" "))
+x=list(map(int,input().split(" ")))
+s=0
+m=[0]
+for i in x:
+    s+=i
+    if s%c==0:
+        a=s//c
+        if a>9:
+            a=a%10
+        s=0
+        print(a-m[-1],end="")
+    else:
+        a=s//c
+        if a>9:
+            a=a%10
+        print(a-m[-1],end="")
+        m.append(a)
+        
