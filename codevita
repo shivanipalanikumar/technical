@@ -1,0 +1,29 @@
+base 6:
+
+num=int(input())
+l=list(map(int,input().split(",")))
+dummy=[]
+base=0
+base6=[]
+for i in l:
+    x=i
+    while(x>0):
+        base+=x%6
+        x//=6
+    base6.append(base)
+    base=0
+i=0
+changect=0
+ct=1
+while(ct>0):
+    ct=0
+    for i in range(num-1):
+        for j in range(i,num):
+            if base6[i]>base6[i+1]:
+                t=base6[i]
+                base6[i]=base6[i+1]
+                base6[i+1]=t
+                changect+=1
+                ct+=1
+                break
+print(changect)
