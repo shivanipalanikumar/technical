@@ -74,3 +74,64 @@ output:
 5 4 3 3 3 3 3 4 5 
 5 4 4 4 4 4 4 4 5 
 5 5 5 5 5 5 5 5 5
+
+
+
+exchange digits
+n,m=map(str,input().split())
+x=list(n)
+y=list(m)
+x.sort()
+res=-1
+for i in range(len(x)):
+    if int(x[i])<int(y[i]):
+        for j in range(i+1,len(x)):
+            if (int(x[j])>=int(y[i])):
+                dummy=x[j]
+                index=j
+                break
+        else:
+            break
+        temp=x[i]
+        x[i]=dummy
+        x[index]=temp
+        n=int(''.join(x))
+        m=int(''.join(y))
+        if (n>m):
+            res=n
+            break
+if (m==n):
+    d=list(set(x))
+    d.sort()
+    for i in range(len(x)-1,0,-1):
+        if x[i]>x[i-1]:
+            temp=x[i-1]
+            t=d.index(x[i-1])+1
+            t=x.index(d[t])
+            x[i-1]=x[t]
+            x[t]=temp
+            n=int(''.join(x))
+            m=int(''.join(y))
+            if (n>m):
+                res=n
+                break
+else:
+    print(res)
+        
+Example 1
+Input
+459 500
+Output
+549
+
+Example 2
+Input
+645757 457765
+Output
+465577
+
+Example 3
+Input
+5964 9984
+Output
+-1
