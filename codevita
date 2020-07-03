@@ -78,6 +78,7 @@ output:
 
 
 exchange digits
+optimal
 n,m=map(str,input().split())
 x=list(n)
 y=list(m)
@@ -117,6 +118,31 @@ if (m==n):
                 break
 else:
     print(res)
+    
+    
+    (or)
+    
+    
+    
+from itertools import permutations as p
+n,m=map(int,input().split())
+a=str(n)
+b=str(m)
+res=-1
+pl=[]
+if len(a)<len(b):
+    print(res)
+else:
+    pl.extend(p(a))
+    print(sorted(pl))
+    pl.sort()
+    for i in pl:
+        i=int(''.join(i))
+        if i>m:
+            print(i)
+            break
+    else:
+        print(res)
         
 Example 1
 Input
