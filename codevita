@@ -53,3 +53,24 @@ def derangements(n):
 		a[i]=(i-1)*(a[i-1]+a[i-2])
 	return a[n]
 print(derangements(100))
+
+
+
+pattern
+n=int(input())
+r=2*n-1
+for i in range(r):
+    for j in range(r):
+        print(n-min(i,j,r-1-i,(r-1)-j),end=" ");
+    print()
+input:5
+output:
+5 5 5 5 5 5 5 5 5 
+5 4 4 4 4 4 4 4 5 
+5 4 3 3 3 3 3 4 5 
+5 4 3 2 2 2 3 4 5 
+5 4 3 2 1 2 3 4 5 
+5 4 3 2 2 2 3 4 5 
+5 4 3 3 3 3 3 4 5 
+5 4 4 4 4 4 4 4 5 
+5 5 5 5 5 5 5 5 5
