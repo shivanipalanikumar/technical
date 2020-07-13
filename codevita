@@ -422,3 +422,26 @@ if n>2:
 else:
     s=0
 print(s)
+
+-------------------------------------------------------------------------------------------------
+
+Difference between the diagonal
+n=int(input())
+l=[]
+sum1=0
+sum2=0
+for i in range(n):
+    x=list(map(int,input().split()))
+    l.append(x)
+    sum1+=l[i][n-1-i]
+    sum2+=l[i][i]
+print(abs(sum1-sum2))
+----------------------------------------------------------------------------------------------------
+Utopian tree
+n=int(input())
+if n%2==0:
+    n=(n>>1)+1
+    n=(1<<n)
+    print(n-1)
+else:
+    print(((1<<((n>>1)+1))-1) << n%2)
