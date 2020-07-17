@@ -447,5 +447,68 @@ else:
     print(((1<<((n>>1)+1))-1) << n%2)
     
 -------------------------------------------------------------------------------------------------------
+Swayamvar
+n=int(input())
+bride=list(input())
+groom=list(input())
+for i in bride:
+  if i in groom:
+    groom.remove(i)
+  else:
+    break
+print(len(groom))
+
+-------------------------------------------------------
+DigitPairs
+
+def largest(num):
+    num_str=str(num)
+    i=9
+    while i>=0:
+        if str(i) in num_str:
+            return i
+        i-=1
+        
+def smallest(num):
+    num_str=str(num)
+    i=0
+    while i<=9:
+        if str(i) in num_str:
+            return i
+        i+=1
 
 
+def pairs_from(num):
+  if num==2:
+    return 1
+  if num>=3:
+    return 2
+  return 0
+  
+t=1
+for case in range(t):
+    n=int(input())
+    num=list(map(int,input().split()))
+    assert(len(num)==n)
+    bitscore=[""]*n
+    for i in range(len(bitscore)):
+        curr_score=str(11*largest(num[i])+7*smallest(num[i]))
+        if len(curr_score)>2:
+            curr_score=curr_score[-2:]
+        bitscore[i]=curr_score
+    odd_pos=[0]*10
+    even_pos=[0]*10
+    for i in range(len(bitscore)):
+      index=int(bitscore[i][0])
+      if (i+1)%2==0:
+        even_pos[index]+=1
+      else:
+        odd_pos[index]+=1
+    count_pairs=[0]*10
+    for i in range(10):
+        if even_pos[i]<=1 and odd_pos[i]<=1:
+            continue
+        count_pairs[i]+=pairs_from(even_pos[i])+pairs_from(odd_pos[i])
+        count_pairs[i]=min(2,count_pairs[i])
+    print(sum(count_pairs))
+--------------------------------------------------------------------------------
