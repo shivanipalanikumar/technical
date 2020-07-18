@@ -1,3 +1,29 @@
+######context######
+base6
+fibonacci
+distribute books
+pattern 
+exchange digits
+coin distribution
+stone game-1,4
+game of marbles
+staircase problem(1,2)
+Rise of Fall of the Number Kingdom
+Birthday Link
+Mountain peak sequence
+Difference between the diagonal
+Utopian tree
+Swayamvar
+DigitPairs
+
+
+
+
+
+
+
+
+
 base 6:
 
 num=int(input())
