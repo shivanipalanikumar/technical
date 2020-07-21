@@ -577,3 +577,13 @@ def calculate(a, b):
     else:
         return calculate(a - 1, b) + calculate(a, b - 1)
 print(calculate(a, b))
+
+
+Test Case 1:
+	Input: 3 3
+	Output: 6
+Test Case 2:
+	Input: 4 3
+	Output: 10
+	
+------------------------------------------------------------------------------------------------------
