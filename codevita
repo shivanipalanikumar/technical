@@ -17,7 +17,7 @@ Swayamvar
 DigitPairs
 candies distribution
 Maneuvering a Cave Problem
-
+String Rotation
 
 
 
@@ -587,3 +587,57 @@ Test Case 2:
 	Output: 10
 	
 ------------------------------------------------------------------------------------------------------
+String rotation
+def equal(c1,c2):
+    for k in c1:
+        if k not in c2 or c1[k]!=c2[k]:
+            return False
+    return True
+    
+    
+def charcount(s):
+    count=dict()
+    for char in s:
+        if char not in count:
+            count[char]=1
+        else:
+            count[char]+=1
+    return count
+    
+    
+def anagram(word,chars):
+    if len(word)<len(chars):
+        return False
+    chars_count=charcount(chars)
+    for i in range(0,len(word)-len(chars)+1):
+        dummy=word[i:i+len(chars)]
+        dummy_count=charcount(dummy)
+        if equal(chars_count,dummy_count):
+            return True
+    return False
+        
+word=input()
+chars=[]
+idx=0
+q=int(input())
+for i in range(q):
+    direc,s =input().strip().split()
+    s=int(s)
+    if direc=="L":
+        idx=(idx+s)%len(word)
+    else:
+        idx=(idx-s)%len(word)
+    chars.append(word[idx])
+if(anagram(word,chars)):
+    print("Yes")
+else:
+    print("No")
+
+input
+carrace
+3
+L 2
+R 2
+L 3
+output
+No
