@@ -20,7 +20,7 @@ Maneuvering a Cave Problem
 String Rotation
 Super reduced String
 picking numbers
-
+count of uncommon letters in 2 string
 
 
 
@@ -678,3 +678,18 @@ Input:
 Output:
 3
 ---------------------------------------------------------------------------------------------------------------------
+count of uncommon letters in 2 string
+
+from collections import Counter
+def common(s1,s2):
+    count=len(s1)+len(s2)                #(3+5=8)
+    s1=Counter(s1)                       #(Counter({'a': 1, 'b': 1, 'c': 1})
+    s2=Counter(s2)                       #Counter({'a': 1, 'm': 1, 'n': 1, 'o': 1, 'p': 1})
+    s=s1&s2                              #Counter({'a': 1})
+    s=list(s.elements())                 #['a']
+    print(count-(2*len(s)))              #(8-(2*1)=6
+s1=input()                               #abc
+s2=input()                               #amnop
+common(s1,s2)
+    
+-------------------------------------------------------------------------------------------------------------------------
