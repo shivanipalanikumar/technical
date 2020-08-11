@@ -21,7 +21,7 @@ String Rotation
 Super reduced String
 picking numbers
 count of uncommon letters in 2 string
-
+kth largest factor
 
 
 
@@ -693,3 +693,19 @@ s2=input()                               #amnop
 common(s1,s2)
     
 -------------------------------------------------------------------------------------------------------------------------
+kth largest factor
+
+from math import sqrt
+n,m=map(int,input().split(","))
+s=int(sqrt(n))
+l=[1,n]
+for i in range(2,s+1):
+    if n%i==0:
+        l.append(i)
+        if n//i!=i:
+            l.append(n//i)
+l.sort()
+if m<len(l):
+    print(l[m*(-1)])
+else:
+    print("1")
