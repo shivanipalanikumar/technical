@@ -31,6 +31,59 @@ while(loop):
     if j>n-1:
         loop=0
         
+        
+       ((((((((((((((((((((( or)))))))))))))))))))))
+        
+        
+n=int(input())
+l=[]
+loop=1
+j=0
+a=0
+b=0
+c=0
+for i in range(3):
+    l.append(list(map(str,input().split(" "))))
+while(loop):
+    a=l[0][j:j+3].count("*")
+    b=l[1][j:j+3].count("*")
+    c=l[2][j:j+3].count("*")
+    if l[0][j]=="#":
+        print("#",end="")
+        j+=1
+        a=l[0][j:j+3].count("*")
+        b=l[1][j:j+3].count("*")
+        c=l[2][j:j+3].count("*")
+    elif (l[0][j]==".") and (l[1][j]==".") and (l[2][j]=="."):
+        j+=1
+        a=l[0][j:j+3].count("*")
+        b=l[1][j:j+3].count("*")
+        c=l[2][j:j+3].count("*")
+    else:
+        a=l[0][j:j+3].count("*")
+        b=l[1][j:j+3].count("*")
+        c=l[2][j:j+3].count("*")
+    if (a+b+c)==7:
+        if (a==2):
+            print("U",end="")
+        else:
+            print("I",end="")
+        j+=3
+    elif(a+b+c)==8:
+        print("O",end="")
+        j+=3
+    elif(a+b+c)==9:
+        print("E",end="")
+        j+=3
+    elif(a+b+c)==6:
+        print("A",end="")
+        j+=3
+    if j>n-1:
+        loop=0
+        
+        
+        
+ 
 Input
 
 18
@@ -39,7 +92,7 @@ Input
 
 * . * # * . * # . * . # * * * * * *
 
-* . * # * . * # . * . # * * * * * *
+* * * # * * * # * * * # * * * * . *
 
 Output
 
