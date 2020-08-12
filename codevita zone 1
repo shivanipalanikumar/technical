@@ -1,0 +1,60 @@
+zone 1 qns
+
+Constellation
+n=int(input())
+l=[]
+loop=1
+j=0
+for i in range(3):
+    l.append(list(map(str,input().split(" "))))
+while(loop):
+    if l[0][j]=="#":
+        print("#",end="")
+        j+=1
+    elif (l[0][j]==".") and (l[1][j]==".") and (l[2][j]=="."):
+        j+=1
+    elif (l[0][j]==".") and (l[0][j+1]=="*") and (l[0][j+2]=="."):
+        print("A",end="")
+        j+=3
+    elif (l[1][j]=="*")and(l[1][j+1]=="*") and(l[1][j+2]=="*"):
+        print("E",end="")
+        j+=3
+    elif (l[1][j]==".") and (l[1][j+1]=="*") and (l[1][j+2]=="."):
+        print("I",end="")
+        j+=3
+    elif (l[1][j]=="*") and (l[1][j+1]==".") and (l[1][j+2]=="*"):
+        if (l[0][j+1]=="*"):
+            print("O",end="")
+        elif(l[0][j+1]=="."):
+            print("U",end="")
+        j+=3
+    if j>n-1:
+        loop=0
+        
+Input
+
+18
+
+* . * # * * * # * * * # * * * . * .
+
+* . * # * . * # . * . # * * * * * *
+
+* . * # * . * # . * . # * * * * * *
+
+Output
+
+U#O#I#EA
+
+Input
+
+12
+
+* . * # . * * * # . * .
+
+* . * # . . * . # * * *
+
+* * * # . * * * # * . *
+
+Output
+
+U#I#A
