@@ -209,3 +209,59 @@ Output
 5
 
 ------------------------------------------------------------------------------------------------------
+
+import re 
+
+def market_cal(stocks_,costs_,profit_,counts_,results_):
+   max_Index = profit_.index(max(profit_))
+
+   max_Val = costs_[max_Index]
+
+   for _ in range(int(stocks_[1])):
+       if stocks_[2] > counts_ and stocks_[2]>=counts_ + max_Val:
+           #print(stocks_[2]," >",counts_ ,"and", stocks_[2],">=",counts_ + max_Val,sep="")
+           counts_ = counts_ + max_Val
+           results_ = results_ + ((max_Val * profit_[max_Index]) / 100)
+       else:
+           print(int(results_))
+           return results_
+   #print(stocks_[2]," >",counts_ ,"and", stocks_[2],">=",counts_ + max_Val,sep="")
+   profit_.pop(max_Index)
+   costs_.pop(max_Index)
+   market_cal(stocks_,costs_,profit_,counts_,results_)
+stock = re.findall(r"[-+]?\d*\.\d+|\d+",input())
+cost = re.findall(r"[-+]?\d*\.\d+|\d+",input())
+profit = re.findall(r"[-+]?\d*\.\d+|\d+",input())
+stocks_ = []
+costs_ = []
+profit_ = []
+for x in stock:
+   stocks_.append(float(x))
+for x in cost:
+   costs_.append(float(x))
+for x in profit:
+   profit_.append(float(x))
+counts_ = 0
+results_ = 0
+val = market_cal(stocks_,costs_,profit_,counts_,results_)
+
+Input
+
+5 3 200
+90 25.5 15.5 30.8 18.8
+5 10 20 5.5 2.5
+
+Output
+
+20
+
+Input
+
+4 2 100
+20 10 30 40
+5 10 30 20
+
+Output
+
+26
+----------------------------------------------------------------------------------------
