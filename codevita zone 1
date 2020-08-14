@@ -1,8 +1,8 @@
 constellation
 Minimum gifts
 Railway Station 
-
-
+count pairs
+Hedger
 
 
 
@@ -209,7 +209,7 @@ Output
 5
 
 ------------------------------------------------------------------------------------------------------
-
+Hedger
 import re 
 
 def market_cal(stocks_,costs_,profit_,counts_,results_):
