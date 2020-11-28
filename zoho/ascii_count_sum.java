@@ -25,3 +25,30 @@ public class acii_count {
 	}
 
 }
+------------------------------------------------------------------------------------------------
+//////more efficient/////
+
+package zoho;
+
+public class acii_count {
+
+	public static void main(String[] args) {
+		String s ="y";
+		char srr[]=s.toCharArray();
+		int ans=0;
+		for(char i:srr) {
+			if(Character.isLowerCase(i)) {
+			ans+= ((int)i)-96;
+			System.out.println(((int)i)-96);
+			}
+			else {
+				ans+=((int)i)-65;
+				System.out.println(((int)i)-64);
+			}
+		}
+		System.out.println(ans);
+
+	}
+
+}
+
