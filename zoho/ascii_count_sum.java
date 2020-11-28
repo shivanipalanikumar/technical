@@ -42,7 +42,7 @@ public class acii_count {
 			System.out.println(((int)i)-96);
 			}
 			else {
-				ans+=((int)i)-65;
+				ans+=((int)i)-64;
 				System.out.println(((int)i)-64);
 			}
 		}
